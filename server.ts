@@ -8,7 +8,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Increase request size limit to handle client-side compressed base64 image strings
 app.use(express.json({ limit: "10mb" }));
