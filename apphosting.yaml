@@ -1,0 +1,18 @@
+# Firebase App Hosting configuration
+# https://firebase.google.com/docs/app-hosting/configure
+
+version: 1
+
+# Environment variables
+# XAI_API_KEY should be set in Firebase Console as a secret
+env:
+  - variable: XAI_API_KEY
+    secret: XAI_API_KEY
+    availability:
+      - RUNTIME
+
+# Runtime settings
+settings:
+  runtime: nodejs20
+  memoryMiB: 1024
+  maxInstances: 10

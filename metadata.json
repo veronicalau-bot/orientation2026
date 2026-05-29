@@ -1,0 +1,6 @@
+{
+  "name": "Library Orientation Game",
+  "description": "An interactive library orientation game featuring dynamic split flow to distribute participants, custom question management, and AI companion feedback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_XAI_API"]
+}

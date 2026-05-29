@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "session": {
+      "title": "Session",
+      "description": "Library Orientation session managed by administrators",
+      "type": "object",
+      "properties": {
+        "sessionId": { "type": "string" },
+        "name": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "questions": { "type": "array" }
+      },
+      "required": ["sessionId", "name", "status"]
+    },
+    "submission": {
+      "title": "Submission",
+      "description": "A student's photo submission for a specific quest",
+      "type": "object",
+      "properties": {
+        "submissionId": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "playerName": { "type": "string" },
+        "groupName": { "type": "string" },
+        "questionId": { "type": "string" },
+        "questionTitle": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "aiComment": { "type": "string" },
+        "isApproved": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["submissionId", "sessionId", "playerName", "groupName", "questionId", "questionTitle", "imageUrl", "aiComment", "isApproved"]
+    }
+  },
+  "firestore": {
+    "sessions/{sessionId}": {
+      "schema": "session",
+      "description": "Orientation Sessions"
+    },
+    "submissions/{submissionId}": {
+      "schema": "submission",
+      "description": "Student Submissions"
+    }
+  }
+}
